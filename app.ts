@@ -1,7 +1,10 @@
+type Combinable = number | string;
+type ConversionDescriptor = 'as-number' | 'as-text';
+
 function combine(
-  ip1: number | string,
-  ip2: number | string,
-  resultConcersion: 'as-number' | 'as-text'
+  ip1: Combinable,
+  ip2: Combinable,
+  resultConcersion: ConversionDescriptor
 ) {
   let result;
   if (typeof ip1 === "number" && typeof ip2 === "number" || resultConcersion === 'as-number') {
