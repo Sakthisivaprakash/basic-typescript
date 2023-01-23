@@ -1,45 +1,15 @@
-// const person: {
-//     name: string;
-//     age: number;
-//     hobbies: string[];
-//     role: [number, string]
-// } = {
-//     name: 'Sakthi',
-//     age: 30,
-//     hobbies: ['Sports', 'Cooking'],
-//     role: [2, 'author']
-// };
-
-//  const ADMIN = 0;
-//  const READ_ONLY = 1;
-//  const AUTHOR = 2;
-
-enum Role {
-    ADMIN,
-    READ_ONLY,
-    AUTHOR
+function combine(ip1: number | string, ip2: number | string) {
+    let result;
+    if(typeof ip1 === 'number' && typeof ip2 === 'number') {
+        result = ip1 + ip2;
+    } else {
+        result = ip1.toString() + ip2.toString();
+    }
+    return result;
 }
 
-const person = {
-    name: 'Sakthi',
-    age: 30,
-    hobbies: ['Sports', 'Cooking'],
-    role: Role.ADMIN
-};
+const combinedAges = combine(30,26);
+console.log(combinedAges);
 
-// person.role.push('admin');
-// person.role[1] = 10; //Error due to tuples
-
-let favoriteActivities: string[];
-favoriteActivities = ['Sports'];
-
-console.log(person.name);
-
-for (const hobby of person.hobbies) {
-    console.log(hobby.toUpperCase());
-    // hobby.map()
-}
-
-if(person.role === Role.ADMIN) {
-    console.log('is read only');
-}
+const combinedNames = combine('Sakthi', 'Geetha');
+console.log(combinedNames);
